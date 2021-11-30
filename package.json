@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run development",
-    "development": "webpack server --progress --config webpack.config.development.js",
-    "build": "webpack --progress --config webpack.config.build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "backend:build": "node app.js",
+    "backend:development": "nodemon app.js",
+    "frontend:development": "webpack server --progress --config webpack.config.development.js",
+    "frontend:build": "webpack --progress --config webpack.config.build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\""
   },
   "repository": {
     "type": "git",
@@ -45,5 +47,11 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "concurrently": "^6.4.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "pug": "^3.0.2"
   }
 }

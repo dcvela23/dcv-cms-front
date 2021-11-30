@@ -15,6 +15,6 @@ module.exports = merge(config, {
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'public')
   }
 })
