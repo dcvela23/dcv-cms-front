@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/dcvela23/dcv-cms-front#readme",
   "devDependencies": {
+    "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
+    "errorhandler": "^1.5.1",
     "eslint": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-loader": "^4.0.2",
@@ -37,7 +39,9 @@
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
+    "method-override": "^3.0.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "morgan": "^1.10.0",
     "postcss-loader": "^6.2.1",
     "raw-loader": "^4.0.2",
     "sass": "^1.43.5",
@@ -49,9 +53,12 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@prismicio/client": "^5.1.0",
     "concurrently": "^6.4.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.15",
+    "prismic-dom": "^2.2.6",
     "pug": "^3.0.2"
   }
 }
