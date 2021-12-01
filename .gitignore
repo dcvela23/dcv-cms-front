@@ -11,6 +11,7 @@
 *.vi
 *~
 *.sass-cache
+.env
 
 # OS or Editor folders
 .DS_Store
