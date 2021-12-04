@@ -1,0 +1,104 @@
+.grid {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	@include grid-gutters(0);
+
+	//gutters
+	&-gutters {
+		@include grid-gutters(var(--grid-gutters));
+	}
+
+	//cellsd
+	&-col {
+		//default
+		flex: 1;
+		min-width: 0; //Firefox fix
+		box-sizing: border-box;
+
+		&-shrink {
+			flex: 0 1 auto;
+		}
+
+		&-relative {
+			position: relative;
+		}
+	}
+
+	$totalColumns: $grid-columns;
+
+	@for $i from 1 through $totalColumns {
+		// default screen
+		&-col-#{$i} {
+			@extend .grid-col;
+			flex: none;
+			width: #{100% / $totalColumns * $i};
+		}
+
+		&-col-0 {
+			display: none !important;
+		}
+
+
+		// desktop
+		&-col-lg-#{$i} {
+			@extend .grid-col;
+			flex: none;
+			@include media('>tablet') {
+				width: #{100% / $totalColumns * $i};
+			}
+		}
+
+		&-col-lg-0 {
+			@include media('>tablet') {
+				display: none !important;
+			}
+		}
+
+		// tablet
+		&-col-md-#{$i} {
+			@extend .grid-col;
+			flex: none;
+			@include media('<tablet') {
+				width: #{100% / $totalColumns * $i};
+			}
+		}
+
+		&-col-md-0 {
+			@include media('<tablet') {
+				display: none !important;
+			}
+		}
+
+    // mobile
+    &-col-xs-#{$i} {
+      @extend .grid-col;
+      flex: none;
+      @include media('<phone') {
+        width: #{100% / $totalColumns * $i};
+      }
+    }
+
+    &-col-xs-0 {
+      @include media('<phone') {
+        display: none !important;
+      }
+    }
+	}
+
+	// row
+	&-row {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 0;
+
+		&::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+	}
+}

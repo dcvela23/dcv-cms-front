@@ -1,0 +1,61 @@
+.headline {
+	&-1 {
+		font-family: $type-primary-regular;
+		font-weight: $headline-font-weight;
+		font-size: $headline-1-font-size-lg;
+		line-height: $headline-1-line-height-lg;
+	}
+
+  &-2 {
+		font-family: $type-primary-regular;
+		font-weight: $headline-font-weight;
+		font-size: $headline-2-font-size-lg;
+		line-height: $headline-2-line-height-lg;
+	}
+}
+
+.paragraph {
+	&-basic {
+		font-family: $type-primary-regular;
+		font-weight: $paragraph-font-weight;
+		font-size: $paragraph-basic-font-size-lg;
+		line-height: $paragraph-basic-line-height-lg;
+	}
+}
+
+.link {
+	font-family: $type-primary-regular;
+	font-weight: $paragraph-font-weight;
+	font-size: $link-font-size-lg;
+	line-height: $link-line-height-lg;
+	text-decoration: $link-line-text-decoration;
+	cursor: pointer;
+}
+
+.label {
+	font-family: $type-primary-regular;
+	font-weight: $paragraph-font-weight;
+	font-size: $label-font-size-lg;
+	line-height: $label-line-height-lg;
+}
+
+h1 {
+	@extend .headline-1;
+}
+
+h2 {
+	@extend .headline-2;
+}
+
+p,
+span {
+	@extend .paragraph-basic;
+}
+
+label {
+	@extend .label;
+}
+
+a {
+	@extend .link;
+}

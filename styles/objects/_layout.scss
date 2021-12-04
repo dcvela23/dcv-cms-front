@@ -1,0 +1,15 @@
+.main {
+	min-height: 100%;
+
+  &-layout {
+    background-color: $color-app-background;
+    min-height: 100vh;
+  }
+}
+
+.section {
+	&_wrapper {
+		max-width: $wrapper-app-width;
+		margin: 0 auto;
+	}
+}

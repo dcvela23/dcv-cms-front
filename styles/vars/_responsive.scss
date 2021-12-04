@@ -1,0 +1,17 @@
+$screen-phone-min: 0px;
+$screen-phone-max: 768px;
+$screen-tablet-min: 769px;
+$screen-tablet-max: 1024px;
+$screen-desktop-min: 1024px;
+
+$spacing-breakpoints: (
+	xs: $screen-phone-max,
+	md: $screen-tablet-max,
+	lg: $screen-desktop-min
+);
+
+$breakpoints: (
+  'phone': $screen-phone-max,
+  'tablet': $screen-tablet-max,
+  'desktop': $screen-desktop-min
+);

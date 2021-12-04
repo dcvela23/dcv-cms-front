@@ -1,0 +1,7 @@
+@include make-space($space-values, $space-prefixes, $spacing-breakpoints);
+
+@include make-space-responsive(
+	$space-values,
+	$space-prefixes,
+	$spacing-breakpoints
+);

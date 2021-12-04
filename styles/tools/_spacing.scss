@@ -1,0 +1,90 @@
+@mixin make-space($values, $prefixes, $spacing-breakpoints) {
+	@each $breakpoint-name, $breakpoint-value in $spacing-breakpoints {
+		// xs
+		@if ($breakpoint-value == 0) {
+			@each $prefix-short, $prefix-long in $prefixes {
+				@each $value-short, $value-long in $values {
+					@if ($prefix-short == "p" and $value-short == "auto") or
+						($prefix-short == "pt" and $value-short == "auto") or
+						($prefix-short == "pr" and $value-short == "auto") or
+						($prefix-short == "pb" and $value-short == "auto") or
+						($prefix-short == "pl" and $value-short == "auto") or
+						($prefix-short == "px" and $value-short == "auto") or
+						($prefix-short == "py" and $value-short == "auto")
+					{
+
+					} @else {
+						.#{$prefix-short}-#{$value-short} {
+							@if (length($prefix-long)) {
+								@each $a in $prefix-long {
+									#{$a}: #{$value-long};
+								}
+							} @else {
+								#{$prefix-long}: #{$value-long};
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin make-space-responsive($values, $prefixes, $spacing-breakpoints) {
+
+	@each $breakpoint-name, $breakpoint-value, $breakpoint-index in $spacing-breakpoints {
+		$min: false;
+		$max: false;
+
+		@if $breakpoint-name == xs {
+			$min: 0;
+			$max: $screen-phone-max;
+		}
+
+		@if $breakpoint-name == md {
+			$min: $screen-tablet-min;
+			$max: $screen-tablet-max;
+		}
+		@if $breakpoint-name == lg {
+			$min: $screen-desktop-min;
+			$max: 9999999999px;
+		}
+
+		@media (min-width: $min) and (max-width: $max)  {
+
+			@each $prefix-short, $prefix-long in $prefixes {
+				@each $value-short, $value-long in $values {
+					@if ($prefix-short == "p" and $value-short == "auto") or
+						(
+							$prefix-short == "pt" and $value-short == "auto"
+						) or
+						(
+							$prefix-short == "pr" and $value-short == "auto"
+						) or
+						(
+							$prefix-short == "pb" and $value-short == "auto"
+						) or
+						(
+							$prefix-short == "pl" and $value-short == "auto"
+						) or
+						(
+							$prefix-short == "px" and $value-short == "auto"
+						) or
+						($prefix-short == "py" and $value-short == "auto")
+					{
+					} @else {
+						.#{$prefix-short}-#{$breakpoint-name}-#{$value-short} {
+							@if (length($prefix-long)) {
+								@each $a in $prefix-long {
+									#{$a}: #{$value-long};
+								}
+							} @else {
+								#{$prefix-long}: #{$value-long};
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
