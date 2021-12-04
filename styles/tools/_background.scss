@@ -1,0 +1,11 @@
+@mixin bg-cover() {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@mixin bg-contain() {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}

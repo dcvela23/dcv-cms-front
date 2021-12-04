@@ -1,0 +1,17 @@
+$color-primary-base: #233172;
+$color-primary-light-1: #D5DCE6;
+$color-secondary-base: #ab5232;
+$color-tertiary-base: #faf2f0;
+$color-neutral-base: #6b6768;
+$color-neutral-dark-1: #242424;
+
+$color-app-background: $color-tertiary-base;
+
+$colors: (
+	color-primary-base: $color-primary-base,
+	color-primary-light-1: $color-primary-light-1,
+	color-secondary-base: $color-secondary-base,
+	color-tertiary-base: $color-tertiary-base,
+	color-neutral-base: $color-neutral-base,
+	color-neutral-dark-1: $color-neutral-dark-1
+);

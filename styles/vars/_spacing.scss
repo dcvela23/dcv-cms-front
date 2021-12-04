@@ -1,0 +1,52 @@
+$space-auto: auto;
+$space-050: 0.5rem;
+$space-100: 1rem;
+$space-150: 1.5rem;
+$space-200: 2rem;
+$space-300: 3rem;
+$space-400: 4rem;
+$space-500: 5rem;
+$space-600: 6rem;
+$space-900: 9rem;
+$space-1200: 12rem;
+
+$space-values: (
+	"auto": $space-auto,
+	"050": $space-050,
+	"100": $space-100,
+	"150": $space-150,
+	"200": $space-200,
+	"300": $space-300,
+	"400": $space-400,
+	"500": $space-500,
+	"900": $space-900,
+);
+
+$space-prefixes: (
+	p: padding,
+	pt: padding-top,
+	pr: padding-right,
+	pb: padding-bottom,
+	pl: padding-left,
+	px: (
+		padding-left,
+		padding-right,
+	),
+	py: (
+		padding-top,
+		padding-bottom,
+	),
+	m: margin,
+	mt: margin-top,
+	mr: margin-right,
+	mb: margin-bottom,
+	ml: margin-left,
+	mx: (
+		margin-left,
+		margin-right,
+	),
+	my: (
+		margin-top,
+		margin-bottom,
+	),
+);
