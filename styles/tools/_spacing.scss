@@ -1,32 +1,29 @@
 @mixin make-space($values, $prefixes, $spacing-breakpoints) {
 	@each $breakpoint-name, $breakpoint-value in $spacing-breakpoints {
-		// xs
-		@if ($breakpoint-value == 0) {
-			@each $prefix-short, $prefix-long in $prefixes {
-				@each $value-short, $value-long in $values {
-					@if ($prefix-short == "p" and $value-short == "auto") or
-						($prefix-short == "pt" and $value-short == "auto") or
-						($prefix-short == "pr" and $value-short == "auto") or
-						($prefix-short == "pb" and $value-short == "auto") or
-						($prefix-short == "pl" and $value-short == "auto") or
-						($prefix-short == "px" and $value-short == "auto") or
-						($prefix-short == "py" and $value-short == "auto")
-					{
+    @each $prefix-short, $prefix-long in $prefixes {
+      @each $value-short, $value-long in $values {
+        @if ($prefix-short == "p" and $value-short == "auto") or
+          ($prefix-short == "pt" and $value-short == "auto") or
+          ($prefix-short == "pr" and $value-short == "auto") or
+          ($prefix-short == "pb" and $value-short == "auto") or
+          ($prefix-short == "pl" and $value-short == "auto") or
+          ($prefix-short == "px" and $value-short == "auto") or
+          ($prefix-short == "py" and $value-short == "auto")
+        {
 
-					} @else {
-						.#{$prefix-short}-#{$value-short} {
-							@if (length($prefix-long)) {
-								@each $a in $prefix-long {
-									#{$a}: #{$value-long};
-								}
-							} @else {
-								#{$prefix-long}: #{$value-long};
-							}
-						}
-					}
-				}
-			}
-		}
+        } @else {
+          .#{$prefix-short}-#{$value-short} {
+            @if (length($prefix-long)) {
+              @each $a in $prefix-long {
+                #{$a}: #{$value-long};
+              }
+            } @else {
+              #{$prefix-long}: #{$value-long};
+            }
+          }
+        }
+      }
+    }
 	}
 }
 

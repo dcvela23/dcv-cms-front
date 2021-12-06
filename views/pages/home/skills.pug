@@ -1,0 +1,17 @@
+section(class="home-skills section has-button-center")
+  div(class="section_wrapper")
+    div(class="section_content")
+
+      h2(class="headline-2 mb-050")=home.skills.title
+
+      p(class="paragraph-basic")=home.skills.subtitle
+
+      div(class="home-skills_list mt-400 grid")
+
+        each skill in home.skills.list
+          div(class="home-skills_list_item grid-col-6 mb-100")
+            p(class="paragraph-basic text-center")=skill.text
+
+      button(class="button is-primary")=home.skills.button
+
+

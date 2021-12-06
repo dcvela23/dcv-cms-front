@@ -1,0 +1,11 @@
+section(class="home-about section")
+  div(class="section_wrapper")
+    div(class="section_content")
+      h2(class="headline-2 mb-050")=home.about.title
+
+      div(class="rich-text")
+        each item in home.about.content
+          if item.type == 'paragraph'
+            p(class="paragraph-basic ")=item.text
+
+      button(class="button is-primary")=home.about.button
