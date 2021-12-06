@@ -4,6 +4,25 @@
   &-layout {
     background-color: $color-app-background;
     min-height: 100vh;
+
+    .section_content {
+      > .headline-1,
+      > .headline-2 {
+        color: $color-primary-base;
+      }
+
+      > .headline-2 {
+        margin-bottom: 4rem;
+      }
+
+      > .paragraph-basic {
+        color: $color-neutral-dark-1;
+      }
+
+      > .button:last-child {
+        margin-top: 6rem;
+      }
+    }
   }
 }
 
@@ -12,4 +31,25 @@
 		max-width: $wrapper-app-width;
 		margin: 0 auto;
 	}
+
+  &-viewport {
+    height: 100vh;
+
+    .section_wrapper {
+      height: 100%;
+    }
+  }
+
+  &.has-button-right {
+    .button {
+      margin-left: auto;
+    }
+  }
+
+  &.has-button-center {
+    .button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }

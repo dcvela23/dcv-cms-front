@@ -1,16 +1,23 @@
 .headline {
 	&-1 {
-		font-family: $type-primary-regular;
+		font-family: $font-mark;
 		font-weight: $headline-font-weight;
 		font-size: $headline-1-font-size-lg;
 		line-height: $headline-1-line-height-lg;
 	}
 
   &-2 {
-		font-family: $type-primary-regular;
+		font-family: $font-mark;
 		font-weight: $headline-font-weight;
 		font-size: $headline-2-font-size-lg;
 		line-height: $headline-2-line-height-lg;
+	}
+
+  &-3 {
+		font-family: $font-mono;
+		font-weight: $headline-font-weight;
+		font-size: $headline-3-font-size-lg;
+		line-height: $headline-3-line-height-lg;
 	}
 }
 
@@ -24,7 +31,7 @@
 }
 
 .link {
-	font-family: $type-primary-regular;
+	font-family: $font-mono;
 	font-weight: $paragraph-font-weight;
 	font-size: $link-font-size-lg;
 	line-height: $link-line-height-lg;
@@ -33,7 +40,7 @@
 }
 
 .label {
-	font-family: $type-primary-regular;
+	font-family: $font-mono;
 	font-weight: $paragraph-font-weight;
 	font-size: $label-font-size-lg;
 	line-height: $label-line-height-lg;
@@ -45,6 +52,10 @@ h1 {
 
 h2 {
 	@extend .headline-2;
+}
+
+h3 {
+	@extend .headline-3;
 }
 
 p,

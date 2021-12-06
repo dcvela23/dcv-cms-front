@@ -1,0 +1,24 @@
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  &_wrapper{
+    width: 100%;
+    max-width: $wrapper-app-width;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+  }
+
+  &_links {
+    display: flex;
+
+    &_item {
+      + .navigation_links_item {
+        margin-left: 3rem;
+      }
+    }
+  }
+}

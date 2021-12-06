@@ -13,6 +13,8 @@ const PrismicDOM = require('prismic-dom');
 const apiEndpoint = process.env.PRISMIC_ENDPOINT;
 const prismicAccessToken = process.env.PRISMIC_ACCESS_TOKEN;
 
+const mapHome = require('./mappers/mapHome')
+
 const handleLinkResolver = (doc) => {
 
   // if (doc.type === 'page') {
@@ -25,7 +27,7 @@ const handleLinkResolver = (doc) => {
 }
 
 // Initialize the prismic.io api
-const initApi = (req) => {
+const initApi = async (req) => {
   return Prismic.getApi(apiEndpoint, {
     accessToken: prismicAccessToken,
     req
@@ -53,19 +55,12 @@ app.use(function(req, res, next) {
 });
 
 // -- ROUTES
-app.get('/', (req, res) => {
-    initApi(req).then((api) => {
-    api.query(
-      // here we request to the prismic api which document data we want
-      Prismic.Predicates.any('document.type', ['page_home', 'preloader'])
-    ).then((response) => {
-      // It response data in documents alfabethical order
-      const { results: data } = response
-      const pageData = data[0]
-      const preloaderData = data[1]
-      res.render('pages/home', { document: pageData });
-    });
-  });
+app.get('/', async (req, res) => {
+  const api = await initApi(req)
+  const homeData = await api.getSingle('page_home')
+  const { results: skillsData } = await api.query(Prismic.Predicates.at('document.type', 'entity_skill'))
+  const mappedHomeData = mapHome({ homeData, skillsData })
+  res.render('pages/home/index', { home: mappedHomeData });
 })
 
 app.get('/', (req, res) => {

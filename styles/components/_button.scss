@@ -1,0 +1,12 @@
+.button {
+  display: block;
+  cursor: pointer;
+  font-family: $font-mono;
+
+  &.is-primary {
+    padding: 1rem 3rem;
+    background: none;
+    border: $border-thin;
+    color: $color-primary-base;
+  }
+}

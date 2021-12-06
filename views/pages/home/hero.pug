@@ -1,0 +1,10 @@
+section(class="home-hero section has-button-right")
+  div(class="section_wrapper")
+    div(class="section_content home-hero_content")
+      h1(class="home-hero_title mb-050")
+       each row in home.hero.title
+        span(class="headline-1 color-primary-base")=row.text
+      p(class="paragraph-basic")=home.hero.subtitle
+      button(class="button is-primary")=home.hero.button
+
+
