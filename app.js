@@ -14,6 +14,7 @@ const apiEndpoint = process.env.PRISMIC_ENDPOINT;
 const prismicAccessToken = process.env.PRISMIC_ACCESS_TOKEN;
 
 const mapHome = require('./mappers/mapHome')
+const mapAbout = require('./mappers/mapAbout')
 
 const handleLinkResolver = (doc) => {
 
@@ -63,8 +64,12 @@ app.get('/', async (req, res) => {
   res.render('pages/home/index', { home: mappedHomeData });
 })
 
-app.get('/', (req, res) => {
-  res.render('pages/about')
+app.get('/about', async (req, res) => {
+  const api = await initApi(req)
+  const aboutData = await api.getSingle('page_about')
+  const mappedAboutData = mapAbout(aboutData)
+
+  res.render('pages/about/index', { about: mappedAboutData })
 })
 
 app.get('/contact', (req, res) => {
