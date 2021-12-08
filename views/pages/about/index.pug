@@ -1,0 +1,21 @@
+extends ../../base.pug
+
+include  ./hero
+include  ./awards
+include  ./interests
+
+block variables
+  - var template = 'about'
+
+block content
+
+  div(class="about")
+    each block in about
+      if block.type == "hero"
+        +hero(block.data)
+
+      if block.type == "awards"
+        +awards(block.data)
+
+      if block.type == "interests"
+        +interests(block.data)

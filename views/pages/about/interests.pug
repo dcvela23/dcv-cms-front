@@ -1,0 +1,15 @@
+mixin interests(data)
+  section(class="about-interests section")
+    div(class="section_wrapper")
+      div(class="section_content")
+        h2(class="headline-2")=data.title
+
+        div(class="pl-400 grid grid-jc-between")
+          each interest in data.items
+            div(class="grid-col")
+              div(class="about-interests_item")
+                figure(class="about-interests_item_figure")
+                  img(class="about-interests_item_figure_image" src=interest.imageUrl)
+                p(class="about-interests_item_name")=interest.name
+
+

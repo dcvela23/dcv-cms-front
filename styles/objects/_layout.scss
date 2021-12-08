@@ -5,7 +5,30 @@
     background-color: $color-app-background;
     min-height: 100vh;
 
+    .section {
+      padding: 10rem 4rem;
+
+
+      &.is-hero{
+        padding-top: 25rem;
+
+        .headline-1 {
+          max-width: 106.25rem;
+          padding-bottom: 10rem;
+        }
+
+        .rich-text {
+          padding-left: 10rem;
+          max-width: 90rem;
+        }
+      }
+    }
+
     .section_content {
+      &.has-max-width {
+        max-width: 125rem;
+      }
+
       > .headline-1,
       > .headline-2 {
         color: $color-primary-base;

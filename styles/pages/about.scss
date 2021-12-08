@@ -1,0 +1,29 @@
+.about {
+  .about-interests_item {
+    width: 100%;
+    max-width: 28.75rem;
+
+    + .about-interests_item {
+      padding-left: 2rem;
+    }
+
+    &_figure {
+      position: relative;
+      padding-top: 150%;
+
+      &_image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &_name {
+      @extend .link;
+      text-align: center;
+    }
+  }
+}
