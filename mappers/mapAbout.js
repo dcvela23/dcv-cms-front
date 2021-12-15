@@ -37,7 +37,6 @@ const mapInteresets = (interestsData) => {
       title: interestsData.primary.interest_title[0].text,
       items: interestsData.items.map((content) => {
         const { interests_name, interest_image } = content
-        console.log(content)
         return {
           name: interests_name,
           imageUrl: interest_image.url

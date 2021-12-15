@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/dcvela23/dcv-cms-front#readme",
   "devDependencies": {
+    "babel-loader": "^8.2.3",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
@@ -35,6 +36,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "file-loader": "^6.2.0",
     "glslify-loader": "^2.0.0",
+    "gsap": "^3.8.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",

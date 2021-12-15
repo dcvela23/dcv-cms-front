@@ -36,7 +36,9 @@ html(lang='en')
     include ./partials/navigation
 
     main(class='main main-layout')
-      div(clas='main_wrapper' id='content' data-template=template)
+      div(class='content main_wrapper' id='content' data-template=template)
         block content
+
+    script(src="main.js")
 
 

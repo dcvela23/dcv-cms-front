@@ -5,9 +5,8 @@
 			format("embedded-opentype"),
 		url("../fonts/mark/mark-light.woff2") format("woff2"),
 		url("../fonts/mark/mark-light.woff") format("woff"),
-		url("../fonts/mark/mark-light.ttf") format("truetype"),
-		url("../fonts/mark/mark-light.svg#Mak-Light")
-			format("svg");
+		url("../fonts/mark/mark-light.ttf") format("truetype");
+		// url("../fonts/mark/mark-light.svg#Mak-Light") format("svg");
 	font-weight: 300;
 	font-style: normal;
 }
@@ -19,9 +18,8 @@
 			format("embedded-opentype"),
 		url("../fonts/fira/fira-light.woff2") format("woff2"),
 		url("../fonts/fira/fira-light.woff") format("woff"),
-		url("../fonts/fira/fira-light.ttf") format("truetype"),
-		url("../fonts/fira/fira-light.svg#FiraSans-Light")
-			format("svg");
+		url("../fonts/fira/fira-light.ttf") format("truetype");
+		// url("../fonts/fira/fira-light.svg#FiraSans-Light") format("svg");
 	font-weight: 300;
 	font-style: normal;
 }
@@ -34,9 +32,8 @@
 			format("embedded-opentype"),
 		url("../fonts/ibm-plex-mono/ibm-plex-mono-regular.woff2") format("woff2"),
 		url("../fonts/ibm-plex-mono/ibm-plex-mono-regular.woff") format("woff"),
-		url("../fonts/ibm-plex-mono/ibm-plex-mono-regular.ttf") format("truetype"),
-		url("../fonts/ibm-plex-mono/ibm-plex-mono-regular.svg#IBMPlexMono-Regular")
-			format("svg");
+		url("../fonts/ibm-plex-mono/ibm-plex-mono-regular.ttf") format("truetype");
+		// url("../fonts/ibm-plex-mono/ibm-plex-mono-regular.svg#IBMPlexMono-Regular") format("svg");
 	font-weight: 400;
 	font-style: normal;
 }
