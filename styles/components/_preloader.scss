@@ -1,0 +1,39 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-primary-light-1;
+  z-index: z('preloader');
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_title {
+    @extend .mb-150;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0;
+
+    span {
+      @extend .headline-1;
+      @extend .color-primary-base;
+      overflow: hidden;
+      display: inline-block;
+    }
+  }
+
+  &_counter {
+    @extend .headline-3;
+    @extend .color-primary-base;
+  }
+}

@@ -5,6 +5,10 @@
     background-color: $color-app-background;
     min-height: 100vh;
 
+    .page {
+      opacity: 0;
+    }
+
     .section {
       padding: 10rem 4rem;
 

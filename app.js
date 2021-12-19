@@ -73,7 +73,7 @@ app.get('/about', async (req, res) => {
 })
 
 app.get('/contact', (req, res) => {
-  res.render('pages/contact')
+  res.render('pages/contact/index')
 })
 
 app.get('/detail/:skill', (req, res) => {

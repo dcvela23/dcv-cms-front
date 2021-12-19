@@ -35,8 +35,12 @@ export default class Page {
 
   animateInPage() {
     return new Promise((resolve) => {
-      GSAP.from(this.pageDomElement, {
-        autoAlpha: 0,
+      GSAP.fromTo(this.pageDomElement,
+        {
+          autoAlpha: 0,
+        },
+        {
+        autoAlpha: 1,
         onComplete: resolve
       })
     })
