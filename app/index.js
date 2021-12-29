@@ -9,7 +9,9 @@ class App {
     this.createContent()
     this.createPages()
     this.createPreloader()
+    this.addEventListeners()
     this.addLinkListeners()
+    this.update()
   }
 
   // -------
@@ -48,12 +50,37 @@ class App {
 
    onPreloaded() {
     this.preloader.destroy()
+    this.onResize()
     this.page.animateInPage()
   }
 
   // -------
   // Link and page transitions
   // -------
+
+  addLinkListeners() {
+    const links = document.querySelectorAll('a')
+    each(links, link => {
+      link.onclick = event => {
+        const { href } = link
+        event.preventDefault()
+        this.onChange(href)
+      }
+    })
+  }
+
+  // -------
+  // Smooth scroll
+  // -------
+
+  // -------
+  // Events
+  // -------
+  onResize() {
+    if (this.page && this.page.onResize){
+      this.page.onResize()
+    }
+  }
 
   async onChange(url) {
     await this.page.animateOutPage()
@@ -72,24 +99,38 @@ class App {
       this.template =  divContent.getAttribute('data-template')
       this.content.setAttribute('data-template', this.template)
       this.content.innerHTML = divContent.innerHTML
+
+      //
       this.page = this.pages[this.template]
       this.page.create()
+
+      //
+      this.onResize()
+
+      //
       this.page.animateInPage()
+
+      //
       this.addLinkListeners()
     } else {
       console.log('Error')
     }
   }
+  // -------
+  // Listeners
+  // -------
+  addEventListeners() {
+    window.addEventListener('resize', this.onResize.bind(this))
+  }
 
-  addLinkListeners() {
-    const links = document.querySelectorAll('a')
-    each(links, link => {
-      link.onclick = event => {
-        const { href } = link
-        event.preventDefault()
-        this.onChange(href)
-      }
-    })
+  // -------
+  // Loop
+  // -------
+  update() {
+    if (this.page && this.page.update){
+      this.page.update()
+    }
+    this.frame = window.requestAnimationFrame(this.update.bind(this))
   }
 }
 

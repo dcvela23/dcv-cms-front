@@ -10,12 +10,13 @@ block variables
 block content
 
   div(class="about page")
-    each block in about
-      if block.type == "hero"
-        +hero(block.data)
+    div(class="page_wrapper")
+      each block in about
+        if block.type == "hero"
+          +hero(block.data)
 
-      if block.type == "awards"
-        +awards(block.data)
+        if block.type == "awards"
+          +awards(block.data)
 
-      if block.type == "interests"
-        +interests(block.data)
+        if block.type == "interests"
+          +interests(block.data)

@@ -2,6 +2,14 @@
 	font-size: $base-unit;
 }
 
+* {
+	&,
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
 html {
 	height: 100%;
 	width: 100%;
@@ -14,16 +22,46 @@ html {
 	text-rendering: optimizeLegibility;
 }
 
-* {
-	&,
-	&:before,
-	&:after {
-		box-sizing: inherit;
-	}
-}
-
 body {
 	height: 100%;
 	width: 100%;
 	transition: all linear $transition-time-fast;
+}
+
+// smooth scroll
+html {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &_wrapper {
+
+        }
+      }
+    }
+  }
 }
