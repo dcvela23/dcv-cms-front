@@ -2,7 +2,7 @@ mixin hero(data)
   section(class="about-hero section is-hero")
     div(class="section_wrapper")
       div(class="section_content")
-        h1(class="headline-1")=data.title
+        h1(class="headline-1 title" data-animation="title")=data.title
 
         div(class="rich-text")
           each item in data.content

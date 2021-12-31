@@ -49,6 +49,14 @@
       > .button:last-child {
         margin-top: 6rem;
       }
+
+      .title {
+        span {
+          font-family: inherit;
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
     }
   }
 }

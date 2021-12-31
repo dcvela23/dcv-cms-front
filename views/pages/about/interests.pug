@@ -2,7 +2,7 @@ mixin interests(data)
   section(class="about-interests section")
     div(class="section_wrapper")
       div(class="section_content")
-        h2(class="headline-2")=data.title
+        h2(class="headline-2 title" data-animation="title")=data.title
 
         div(class="pl-400 grid grid-jc-between")
           each interest in data.items

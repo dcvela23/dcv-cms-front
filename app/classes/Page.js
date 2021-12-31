@@ -1,7 +1,9 @@
 import each from 'lodash/each'
+import map from 'lodash/map'
 import GSAP from 'gsap'
 import Prefix from 'prefix'
 import NormalizeWheel from 'normalize-wheel'
+import Title from 'animations/Title'
 
 export default class Page {
   constructor({
@@ -13,7 +15,8 @@ export default class Page {
     this.pageSelector = pageSelector
     this.pageChildrenSelectors = {
       ...pageChildrenSelectors,
-      wrapper: '.page_wrapper'
+      wrapper: '.page_wrapper',
+      animationsTitle: '[data-animation="title"]'
     }
     this.transformPrefix = Prefix('transform')
     this.setInitialScrollValues()
@@ -40,6 +43,16 @@ export default class Page {
           this.pageChildrenDomElements[key] = document.querySelector(childrenSelector)
         }
       }
+    })
+
+    this.createAnimations()
+  }
+
+  createAnimations() {
+    this.animationsTitle = map(this.pageChildrenDomElements.animationsTitle, titleDomElement => {
+      return new Title({
+        componentDomElement: titleDomElement
+      })
     })
   }
 
@@ -95,6 +108,8 @@ export default class Page {
     if (this.pageChildrenDomElements.wrapper) {
       this.scroll.limit = this.pageChildrenDomElements.wrapper.clientHeight - window.innerHeight
     }
+
+    each(this.animationsTitle, animation => animation.onResize())
   }
 
   setInitialScrollValues() {
